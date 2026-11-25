@@ -1,0 +1,7 @@
+{
+  "note": "Triangle and material budgets for one prop (one renderer). Example values from a mobile room-prop study (2026-11-25).",
+  "small": { "max_triangles": 600, "max_materials": 1, "examples": ["cup", "book", "small deco"] },
+  "normal": { "max_triangles": 2500, "max_materials": 1, "examples": ["chair", "stool", "lamp", "table"] },
+  "large": { "max_triangles": 5000, "max_materials": 1, "examples": ["bed", "wardrobe", "christmas tree"] },
+  "lod": { "preset": "Reduced", "boxSegMax": 1, "segScale": 0.375, "segMin": 6, "extrudeArc": 1, "simplify": 0.01 }
+}

@@ -1,0 +1,26 @@
+{
+  "note": "Fill per project: triangle/material budget per prop size class. Values below are placeholders.",
+  "small": {
+    "max_triangles": 600,
+    "max_materials": 1,
+    "examples": []
+  },
+  "normal": {
+    "max_triangles": 2500,
+    "max_materials": 1,
+    "examples": []
+  },
+  "large": {
+    "max_triangles": 5000,
+    "max_materials": 1,
+    "examples": []
+  },
+  "lod": {
+    "preset": "Reduced",
+    "boxSegMax": 1,
+    "segScale": 0.375,
+    "segMin": 6,
+    "extrudeArc": 1,
+    "simplify": 0.01
+  }
+}
