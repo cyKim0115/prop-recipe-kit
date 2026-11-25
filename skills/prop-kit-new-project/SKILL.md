@@ -5,6 +5,8 @@ description: prop-recipe-kit(Unity 생성기 + 블렌더 헤드리스 키트)를
 
 # 새 프로젝트에 붙이기 (prop-recipe-kit)
 
+시험적인 도구다. 프로토타이핑·시안 제작용이며 출시용 최종 에셋을 대신하지 않는다(최종 모델은 아티스트 제작을 전제).
+
 ## 반드시 지킬 것
 
 1. **설치는 미리 보기부터.** `KIT\tools\install.ps1 -Project <경로> -WhatIf`로 무엇이 어디에 생기는지 보여 주고, 사용자가 승인하면 `-WhatIf` 없이 돌린다.

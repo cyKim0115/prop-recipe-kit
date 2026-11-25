@@ -5,6 +5,8 @@ description: 치수 사양(JSON)이나 Unity에서 내보낸 레시피로 블렌
 
 # 블렌더 헤드리스 소품 (prop-recipe-kit)
 
+시험적인 도구다. 프로토타이핑·시안 제작용이며 출시용 최종 에셋을 대신하지 않는다(최종 모델은 아티스트 제작을 전제).
+
 키트 루트(`KIT`) = 이 폴더의 `kit_root.txt`에 적힌 경로, 없으면 환경변수 `PROP_RECIPE_KIT`. 명령은 `python KIT/blender/scripts/blender_run.py ...`.
 이 키트의 본체는 Unity 생성기 감량이다. 블렌더는 **FBX·.blend 전달과 삼각형 예산을 정확히 맞출 때** 쓴다.
 

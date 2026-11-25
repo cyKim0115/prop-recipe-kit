@@ -2,6 +2,8 @@
 
 Editor-only Unity package that builds low-poly props from code recipes.
 
+> **Experimental.** Meant for prototyping and concept mock-ups (blocking out shape, size and placement before art is ready). It does not replace final production art, and the API and spec format may change without notice.
+
 - **Recipe DSL** (`PropParts`): rounded boxes, extruded plates (star, heart, flower, cloud, arch, half ring, round rect, shield, crescent, scallop, wave, polygon, bat, any outline), lathes (cylinder/cone, ball, dome, any profile, petal lobes), tori.
 - **Bake** (`PropBaker`): generate every part at a chosen quality (`PropLod`), move it into prop space, drop triangles buried inside other closed parts, then build one mesh with a submesh per material or a single palette submesh with palette UVs.
 - **Spec JSON** (`PropSpecJson`): write/read the same recipe format the Blender side (`blender/scripts/bl/prop_recipe.py`) reads. Floats round-trip bit-exactly.

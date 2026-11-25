@@ -5,6 +5,8 @@ description: 시안 이미지를 보고 Unity 생성기 레시피(PropParts DSL)
 
 # 시안 → 레시피 → 감량 (prop-recipe-kit)
 
+시험적인 도구다. 프로토타이핑·시안 제작용이며 출시용 최종 에셋을 대신하지 않는다(최종 모델은 아티스트 제작을 전제).
+
 Unity 패키지 `com.proprecipe.kit`(네임스페이스 `PropRecipe`)의 `PropParts`로 부품을 쌓고, `PropBaker`로 굽고, `PropMeasure`·`PropCapture`로 확인한다. 블렌더는 FBX가 필요할 때만(스킬 `prop-blender-headless`).
 
 ## 반드시 지킬 것
