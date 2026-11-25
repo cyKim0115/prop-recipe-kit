@@ -1,0 +1,17 @@
+{
+  "name": "com.proprecipe.kit",
+  "displayName": "Prop Recipe Kit",
+  "version": "0.1.0",
+  "unity": "6000.0",
+  "description": "Editor-only low-poly prop generator. Build props from a small recipe DSL (rounded boxes, extruded plates, lathes, tori), bake them into one mesh at chosen LOD presets with hidden-face culling and per-material or palette submeshes, read/write the spec JSON shared with the Blender side, and measure/capture the result.",
+  "keywords": [
+    "procedural",
+    "mesh",
+    "low-poly",
+    "prop",
+    "editor"
+  ],
+  "dependencies": {
+    "com.unity.modules.imageconversion": "1.0.0"
+  }
+}
