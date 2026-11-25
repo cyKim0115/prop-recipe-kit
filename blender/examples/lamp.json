@@ -1,0 +1,13 @@
+{
+  "name": "SM_Test_Lamp",
+  "note": "Example covering cone, sphere, torus. Ring sits around the shade.",
+  "materials": { "base": "#5E6B66", "shade": "#F2E2B6", "bulb": "#FFF6D8" },
+  "parts": [
+    { "type": "cylinder", "radius": 0.09, "depth": 0.03, "segments": 12, "location": [0, 0, 0.015], "material": "base", "shade": "smooth" },
+    { "type": "cylinder", "radius": 0.012, "depth": 0.32, "segments": 6, "location": [0, 0, 0.19], "material": "base" },
+    { "type": "sphere", "radius": 0.04, "segments": 10, "rings": 6, "location": [0, 0, 0.36], "material": "bulb", "shade": "smooth" },
+    { "type": "cone", "radius_bottom": 0.13, "radius_top": 0.07, "depth": 0.14, "segments": 12, "caps": false, "location": [0, 0, 0.38], "material": "shade", "shade": "smooth" },
+    { "type": "torus", "major_radius": 0.13, "minor_radius": 0.008, "segments": 16, "minor_segments": 4, "location": [0, 0, 0.31], "material": "base", "shade": "smooth" }
+  ],
+  "expect": { "dims_m": [0.276, 0.276, 0.45], "tolerance_m": 0.001, "max_triangles": 800, "max_materials": 3 }
+}

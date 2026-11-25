@@ -1,0 +1,13 @@
+{
+  "name": "SM_Calib_Axis",
+  "note": "Axis calibration: red nose = front (-Y), blue cylinder = +X, yellow cone = top, green smooth sphere = back (+Y). Uneven extents so each axis is identifiable: X 1.2, Y 1.1, Z 1.0.",
+  "materials": { "body": "#8FA89A", "front": "#D9534F", "right": "#4A90D9", "top": "#F2C94C", "back": "#6FCF97" },
+  "parts": [
+    { "type": "box", "size": [1.0, 0.6, 0.8], "location": [0, 0, 0.4], "material": "body", "bevel": { "width": 0.02, "segments": 1 } },
+    { "type": "box", "size": [0.2, 0.2, 0.2], "location": [0, -0.4, 0.4], "material": "front" },
+    { "type": "cylinder", "radius": 0.08, "depth": 0.2, "segments": 10, "rotation": [0, 90, 0], "location": [0.6, 0, 0.4], "material": "right", "shade": "smooth" },
+    { "type": "cone", "radius_bottom": 0.1, "radius_top": 0.0, "depth": 0.2, "segments": 10, "location": [0, 0, 0.9], "material": "top", "shade": "smooth" },
+    { "type": "sphere", "radius": 0.15, "segments": 12, "rings": 6, "location": [0, 0.45, 0.4], "material": "back", "shade": "smooth" }
+  ],
+  "expect": { "dims_m": [1.2, 1.1, 1.0], "tolerance_m": 0.001, "max_triangles": 600, "max_materials": 5 }
+}

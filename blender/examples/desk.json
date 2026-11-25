@@ -1,0 +1,16 @@
+{
+  "name": "SM_Test_Desk",
+  "note": "Example: 0.8 x 0.4 x 0.75 m desk. Blender axes, meters, front faces -Y. Part location = part center.",
+  "materials": { "wood": "#C8955A", "leg": "#7A5236" },
+  "uv": "palette",
+  "parts": [
+    { "type": "box", "size": [0.8, 0.4, 0.04], "location": [0, 0, 0.73], "material": "wood",
+      "bevel": { "width": 0.008, "segments": 1 } },
+    { "type": "box", "size": [0.3, 0.02, 0.12], "location": [0, -0.17, 0.64], "material": "wood" },
+    { "type": "cylinder", "radius": 0.02, "depth": 0.71, "segments": 8, "location": [-0.36, -0.16, 0.355], "material": "leg", "shade": "smooth" },
+    { "type": "cylinder", "radius": 0.02, "depth": 0.71, "segments": 8, "location": [ 0.36, -0.16, 0.355], "material": "leg", "shade": "smooth" },
+    { "type": "cylinder", "radius": 0.02, "depth": 0.71, "segments": 8, "location": [-0.36,  0.16, 0.355], "material": "leg", "shade": "smooth" },
+    { "type": "cylinder", "radius": 0.02, "depth": 0.71, "segments": 8, "location": [ 0.36,  0.16, 0.355], "material": "leg", "shade": "smooth" }
+  ],
+  "expect": { "dims_m": [0.8, 0.4, 0.75], "tolerance_m": 0.001, "max_triangles": 400, "max_materials": 2 }
+}

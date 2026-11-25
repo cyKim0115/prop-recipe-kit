@@ -1,0 +1,15 @@
+{
+  "name": "SM_Test_Chair",
+  "note": "Example chair: 0.42 x 0.40 x 0.85 m. Back rest on +Y (rear), so the front (-Y) is the open side.",
+  "materials": { "cushion": "#F4A6B8", "wood": "#E3C9A0" },
+  "parts": [
+    { "type": "box", "size": [0.42, 0.40, 0.05], "location": [0, 0, 0.43], "material": "cushion", "bevel": { "width": 0.01, "segments": 1 } },
+    { "type": "box", "size": [0.42, 0.04, 0.40], "location": [0, 0.18, 0.65], "material": "wood", "bevel": { "width": 0.008, "segments": 1 } },
+    { "type": "sphere", "radius": 0.06, "segments": 10, "rings": 5, "location": [0, 0.12, 0.70], "material": "cushion", "shade": "smooth" },
+    { "type": "cylinder", "radius": 0.02, "depth": 0.43, "segments": 8, "location": [-0.18, -0.17, 0.215], "material": "wood", "shade": "smooth" },
+    { "type": "cylinder", "radius": 0.02, "depth": 0.43, "segments": 8, "location": [ 0.18, -0.17, 0.215], "material": "wood", "shade": "smooth" },
+    { "type": "cylinder", "radius": 0.02, "depth": 0.43, "segments": 8, "location": [-0.18,  0.17, 0.215], "material": "wood", "shade": "smooth" },
+    { "type": "cylinder", "radius": 0.02, "depth": 0.43, "segments": 8, "location": [ 0.18,  0.17, 0.215], "material": "wood", "shade": "smooth" }
+  ],
+  "expect": { "dims_m": [0.42, 0.40, 0.85], "tolerance_m": 0.001, "max_triangles": 400, "max_materials": 2 }
+}

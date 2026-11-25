@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+/out/
+*.blend1
+skills/*/kit_root.txt
