@@ -81,7 +81,7 @@ namespace PropRecipe
             string path = null;
             if (_assetFolder != null)
             {
-                path = _assetFolder + "/" + name + ".mat";
+                path = _assetFolder + "/" + PropAssetUtil.SafeName(name) + ".mat";
                 mat = AssetDatabase.LoadAssetAtPath<Material>(path);
             }
             if (mat == null)

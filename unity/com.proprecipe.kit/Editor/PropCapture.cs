@@ -63,7 +63,7 @@ namespace PropRecipe
                         shot.ReadPixels(new Rect(0, 0, px, px), 0, 0);
                         shot.Apply();
                         RenderTexture.active = null;
-                        File.WriteAllBytes(Path.Combine(outDir, $"{prefix}__{names[i]}{(mask ? "__mask" : "")}.png"), shot.EncodeToPNG());
+                        File.WriteAllBytes(Path.Combine(outDir, $"{PropAssetUtil.SafeName(prefix)}__{names[i]}{(mask ? "__mask" : "")}.png"), shot.EncodeToPNG());
                         Object.DestroyImmediate(shot);
                     }
                 }
@@ -106,7 +106,7 @@ namespace PropRecipe
                     shot.ReadPixels(new Rect(0, 0, px, px), 0, 0);
                     shot.Apply();
                     RenderTexture.active = null;
-                    File.WriteAllBytes(Path.Combine(outDir, $"{prefix}__{f:D3}.png"), shot.EncodeToPNG());
+                    File.WriteAllBytes(Path.Combine(outDir, $"{PropAssetUtil.SafeName(prefix)}__{f:D3}.png"), shot.EncodeToPNG());
                 }
                 Object.DestroyImmediate(shot);
                 cam.targetTexture = null;

@@ -24,6 +24,14 @@ import prop_render  # noqa: E402
 import prop_validate  # noqa: E402
 
 
+def _safe_stem(name):
+    """File stem for outputs. Spec names come from JSON, so keep every output inside out_dir."""
+    bad = set('/:*?"<>|' + chr(92))
+    stem = "".join("_" if (c in bad or ord(c) < 32) else c for c in str(name))
+    stem = stem.replace("..", "_").strip(" .")
+    return stem or "unnamed"
+
+
 def main(argv):
     args = argv[argv.index("--") + 1:] if "--" in argv else []
     flags = {a for a in args if a.startswith("--")}
@@ -52,24 +60,25 @@ def main(argv):
     metrics, checks = prop_validate.check(obj, spec)
     tol = float(spec.get("expect", {}).get("tolerance_m", prop_validate.DEFAULT_TOLERANCE_M))
 
+    stem = _safe_stem(name)
     files = {}
     if "--no-blend" not in flags:
-        blend = os.path.join(out_dir, name + ".blend")
+        blend = os.path.join(out_dir, stem + ".blend")
         bpy.ops.wm.save_as_mainfile(filepath=blend, copy=True, compress=True)
         files["blend"] = blend
-    fbx = os.path.join(out_dir, name + ".fbx")
+    fbx = os.path.join(out_dir, stem + ".fbx")
     fbx_bytes = prop_export.export(obj, fbx)
     files["fbx"] = fbx
     fbx_info = prop_export.inspect(fbx)
     checks += prop_export.check(fbx_info, metrics["dims_m"], tol)
 
     if spec.get("uv", "palette") == "palette" and spec.get("frame") != "unity":
-        pal = os.path.join(out_dir, name + "_palette.png")
+        pal = os.path.join(out_dir, stem + "_palette.png")
         prop_render.palette_png(spec, pal)
         files["palette"] = pal
     render_info = None
     if "--no-render" not in flags:
-        sheet = os.path.join(out_dir, name + "_views.webp")
+        sheet = os.path.join(out_dir, stem + "_views.webp")
         render_info = prop_render.render_sheet(obj, sheet)
         files["views"] = sheet
 
@@ -88,7 +97,7 @@ def main(argv):
         "files": files,
         "seconds": round(time.time() - t0, 2),
     }
-    rep = os.path.join(out_dir, name + "_report.json")
+    rep = os.path.join(out_dir, stem + "_report.json")
     with open(rep, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
 

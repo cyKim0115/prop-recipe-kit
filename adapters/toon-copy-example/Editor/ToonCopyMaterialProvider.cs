@@ -93,11 +93,11 @@ namespace PropRecipe.Adapters.ToonCopy
         private Material CopyOfSource(string name)
         {
             if (_cache.TryGetValue(name, out Material cached) && cached != null) return cached;
-            string path = _materialFolder + "/" + name + ".mat";
+            string path = _materialFolder + "/" + PropAssetUtil.SafeName(name) + ".mat";
             Material mat = AssetDatabase.LoadAssetAtPath<Material>(path);
             if (mat == null)
             {
-                if (!AssetDatabase.IsValidFolder(_materialFolder)) System.IO.Directory.CreateDirectory(_materialFolder);
+                PropAssetUtil.EnsureFolder(_materialFolder);
                 if (!AssetDatabase.CopyAsset(_sourceMaterialPath, path))
                 {
                     Debug.LogError("[ToonCopyMaterialProvider] 원본 재질 복사 실패: " + _sourceMaterialPath);

@@ -28,7 +28,7 @@ namespace PropRecipe
             var tex = new Texture2D(Mathf.Max(1, colors.Count), 1, TextureFormat.RGB24, false);
             for (int i = 0; i < colors.Count; i++) tex.SetPixel(i, 0, colors[i]);
             tex.Apply();
-            string path = folder.TrimEnd('/') + "/PT_" + propId + ".png";
+            string path = folder.TrimEnd('/') + "/PT_" + PropAssetUtil.SafeName(propId) + ".png";
             File.WriteAllBytes(path, tex.EncodeToPNG());
             Object.DestroyImmediate(tex);
             AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
